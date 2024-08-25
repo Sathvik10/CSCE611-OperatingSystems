@@ -1,0 +1,706 @@
+i386-elf-gcc -m32 -nostdlib -fno-builtin -nostartfiles -nodefaultlibs -fno-exceptions -fno-rtti -fno-stack-protector -fleading-underscore -fno-asynchronous-unwind-tables -c -o kernel.o kernel.C
+i386-elf-gcc -m32 -nostdlib -fno-builtin -nostartfiles -nodefaultlibs -fno-exceptions -fno-rtti -fno-stack-protector -fleading-underscore -fno-asynchronous-unwind-tables -c -o page_table.o page_table.C
+i386-elf-gcc -m32 -nostdlib -fno-builtin -nostartfiles -nodefaultlibs -fno-exceptions -fno-rtti -fno-stack-protector -fleading-underscore -fno-asynchronous-unwind-tables -c -o vm_pool.o vm_pool.C
+i386-elf-ld -melf_i386 -T linker.ld -o kernel.bin start.o utils.o kernel.o assert.o console.o \
+   gdt.o idt.o irq.o exceptions.o \
+   interrupts.o simple_timer.o simple_keyboard.o paging_low.o page_table.o cont_frame_pool.o vm_pool.o machine.o \
+   machine_low.o
+/dev/disk4          	                               	/Users/sathvikkote/Docs/College/Sem 2/OS/MP4/floppy
+"disk4" ejected.
+========================================================================
+                        Bochs x86 Emulator 2.7
+              Built from SVN snapshot on August  1, 2021
+                Timestamp: Sun Aug  1 10:07:00 CEST 2021
+========================================================================
+------------------------------
+Bochs Configuration: Main Menu
+------------------------------
+
+This is the Bochs Configuration Interface, where you can describe the
+machine that you want to simulate.  Bochs has already searched for a
+configuration file (typically called bochsrc.txt) and loaded it if it
+could be found.  When you are satisfied with the configuration, go
+ahead and start the simulation.
+
+You can also start bochs with the -q option to skip these menus.
+
+1. Restore factory default configuration
+2. Read options from...
+3. Edit options
+4. Save options to...
+5. Restore the Bochs state from...
+6. Begin simulation
+7. Quit now
+
+Please choose one: [6] Next at t=0
+(0) [0x0000fffffff0] f000:fff0 (unk. ctxt): jmpf 0xf000:e05b          ; ea5be000f0
+<bochs:1> Installed exception handler at ISR <0>
+Installed interrupt handler at IRQ <0>
+Installed interrupt handler at IRQ <1>
+after installing keyboard handler
+Frame Pool initialized
+Frame Pool initialized
+Installed exception handler at ISR <14>
+Initialized Paging System
+Constructed Page Table object
+Loaded page table
+Enabled paging
+Hello World!
+536875000registered VM pool
+Constructed VMPool object.
+1073745912registered VM pool
+Constructed VMPool object.
+VM Pools successfully created!
+I am starting with an extensive test
+of the VM Pool memory allocator.
+Please be patient...
+Testing the memory allocation on code_pool...
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Allocated region of memory. Starting from: 536875008
+Released region of memory.
+Allocated region of memory. Starting from: 536875408
+Released region of memory.
+Allocated region of memory. Starting from: 536876208
+Released region of memory.
+Allocated region of memory. Starting from: 536877408
+Released region of memory.
+Allocated region of memory. Starting from: 536879008
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536881008
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536883408
+Released region of memory.
+Allocated region of memory. Starting from: 536886208
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536889408
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536893008
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536897008
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536901408
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536906208
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536911408
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536917008
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536923008
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536929408
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536936208
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536943408
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536951008
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536959008
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536967408
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536976208
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536985408
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 536995008
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537005008
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537015408
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537026208
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537037408
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537049008
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537061008
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537073408
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537086208
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537099408
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537113008
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537127008
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537141408
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537156208
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537171408
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537187008
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537203008
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537219408
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537236208
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537253408
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537271008
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537289008
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537307408
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537326208
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 537345408
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Testing the memory allocation on heap_pool...
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Allocated region of memory. Starting from: 1073745920
+Released region of memory.
+Allocated region of memory. Starting from: 1073746320
+Released region of memory.
+Allocated region of memory. Starting from: 1073747120
+Released region of memory.
+Allocated region of memory. Starting from: 1073748320
+Released region of memory.
+Allocated region of memory. Starting from: 1073749920
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073751920
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073754320
+Released region of memory.
+Allocated region of memory. Starting from: 1073757120
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073760320
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073763920
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073767920
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073772320
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073777120
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073782320
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073787920
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073793920
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073800320
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073807120
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073814320
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073821920
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073829920
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073838320
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073847120
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073856320
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073865920
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073875920
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073886320
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073897120
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073908320
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073919920
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073931920
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073944320
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073957120
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073970320
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073983920
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1073997920
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1074012320
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1074027120
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+One second has passed
+Allocated region of memory. Starting from: 1074042320
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1074057920
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1074073920
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1074090320
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1074107120
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1074124320
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1074141920
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1074159920
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1074178320
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1074197120
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Allocated region of memory. Starting from: 1074216320
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+EXCEPTION DISPATCHER: exc_no = <14>
+handled page fault
+Released region of memory.
+Test Passed! Congratulations!
+YOU CAN SAFELY TURN OFF THE MACHINE NOW.
+One second has passed
+One second has passed
+One second has passed
+One second has passed
+(0).[2537436000] [0x00000010095a] 0008:000000000010095a (unk. ctxt): jmp .-2  (0x0010095a)     ; ebfe

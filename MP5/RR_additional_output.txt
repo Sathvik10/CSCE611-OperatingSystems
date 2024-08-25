@@ -1,0 +1,402 @@
+i386-elf-gcc -m32 -nostdlib -fno-builtin -nostartfiles -nodefaultlibs -fno-exceptions -fno-rtti -fno-stack-protector -fleading-underscore -fno-asynchronous-unwind-tables -c -o kernel.o kernel.C
+i386-elf-ld -melf_i386 -T linker.ld -o kernel.bin start.o utils.o kernel.o \
+   assert.o console.o gdt.o idt.o irq.o exceptions.o interrupts.o \
+   simple_timer.o simple_keyboard.o frame_pool.o mem_pool.o \
+   thread.o threads_low.o scheduler.o machine.o machine_low.o
+/dev/disk4          	                               	/Users/sathvikkote/Docs/College/Sem 2/OS/MP5/floppy
+"disk4" ejected.
+========================================================================
+                        Bochs x86 Emulator 2.7
+              Built from SVN snapshot on August  1, 2021
+                Timestamp: Sun Aug  1 10:07:00 CEST 2021
+========================================================================
+------------------------------
+Bochs Configuration: Main Menu
+------------------------------
+
+This is the Bochs Configuration Interface, where you can describe the
+machine that you want to simulate.  Bochs has already searched for a
+configuration file (typically called bochsrc.txt) and loaded it if it
+could be found.  When you are satisfied with the configuration, go
+ahead and start the simulation.
+
+You can also start bochs with the -q option to skip these menus.
+
+1. Restore factory default configuration
+2. Read options from...
+3. Edit options
+4. Save options to...
+5. Restore the Bochs state from...
+6. Begin simulation
+7. Quit now
+
+Please choose one: [6] Next at t=0
+(0) [0x0000fffffff0] f000:fff0 (unk. ctxt): jmpf 0xf000:e05b          ; ea5be000f0
+<bochs:1> Installed exception handler at ISR <0>
+Allocating Memory Pool... done
+Constructed Scheduler.
+Installed interrupt handler at IRQ <0>
+Hello World!
+CREATING THREAD 1...
+esp = <2098128>
+done
+DONE
+CREATING THREAD 2...esp = <2099176>
+done
+DONE
+CREATING THREAD 3...esp = <2100224>
+done
+DONE
+CREATING THREAD 4...esp = <2101272>
+done
+DONE
+esp = <2102320>
+done
+esp = <2103368>
+done
+Thread: 4
+FUN 5 INVOKED!
+FUN 5 IN SLOW BURST[0]
+FUN 5: TICK [0]
+FUN 5: TICK [1]
+FUN 5: TICK [2]
+FUN 5: TICK [3]
+FUN 5: TICK [4]
+FUN 5: TICK [5]
+FUN 5: TICK [6]
+FUN 5: TICK [7]
+50 MS has passed
+RR Scheduler Yeilding Thread To [5]
+Thread: 5
+FUN 6 INVOKED!
+FUN 6 IN SLOW BURST[0]
+FUN 6: TICK [0]
+FUN 6: TICK [1]
+FUN 6: TICK [2]
+FUN 6: TICK [3]
+FUN 6: TICK [4]
+FUN 6: TICK [5]
+FUN 6: TICK [6]
+FUN 6: TICK [7]
+50 MS has passed
+RR Scheduler Yeilding Thread To [4]
+FUN 5: TICK [8]
+FUN 5: TICK [9]
+FUN 5 IN SLOW BURST[1]
+FUN 5: TICK [0]
+FUN 5: TICK [1]
+FUN 5: TICK [2]
+FUN 5: TICK [3]
+FUN 5: TICK [4]
+FUN 5: TICK [5]
+FUN 5: TICK [6]
+50 MS has passed
+RR Scheduler Yeilding Thread To [5]
+FUN 6: TICK [8]
+FUN 6: TICK [9]
+FUN 6 IN SLOW BURST[1]
+FUN 6: TICK [0]
+FUN 6: TICK [1]
+FUN 6: TICK [2]
+FUN 6: TICK [3]
+FUN 6: TICK [4]
+FUN 6: TICK [5]
+FUN 6: TICK [6]
+50 MS has passed
+RR Scheduler Yeilding Thread To [4]
+FUN 5: TICK [7]
+FUN 5: TICK [8]
+FUN 5: TICK [9]
+FUN 5 IN SLOW BURST[2]
+FUN 5: TICK [0]
+FUN 5: TICK [1]
+FUN 5: TICK [2]
+FUN 5: TICK [3]
+FUN 5: TICK [4]
+50 MS has passed
+RR Scheduler Yeilding Thread To [5]
+FUN 6: TICK [7]
+FUN 6: TICK [8]
+FUN 6: TICK [9]
+FUN 6 IN SLOW BURST[2]
+FUN 6: TICK [0]
+FUN 6: TICK [1]
+FUN 6: TICK [2]
+FUN 6: TICK [3]
+FUN 6: TICK [4]
+FUN 6: TICK [5]
+50 MS has passed
+RR Scheduler Yeilding Thread To [4]
+FUN 5: TICK [5]
+FUN 5: TICK [6]
+FUN 5: TICK [7]
+FUN 5: TICK [8]
+FUN 5: TICK [9]
+FUN 5 IN SLOW BURST[3]
+FUN 5: TICK [0]
+FUN 5: TICK [1]
+FUN 5: TICK [2]
+FUN 5: TICK [3]
+50 MS has passed
+RR Scheduler Yeilding Thread To [5]
+FUN 6: TICK [6]
+FUN 6: TICK [7]
+FUN 6: TICK [8]
+FUN 6: TICK [9]
+FUN 6 IN SLOW BURST[3]
+FUN 6: TICK [0]
+FUN 6: TICK [1]
+FUN 6: TICK [2]
+FUN 6: TICK [3]
+50 MS has passed
+RR Scheduler Yeilding Thread To [4]
+FUN 5: TICK [4]
+FUN 5: TICK [5]
+FUN 5: TICK [6]
+FUN 5: TICK [7]
+FUN 5: TICK [8]
+FUN 5: TICK [9]
+FUN 5 IN SLOW BURST[4]
+FUN 5: TICK [0]
+FUN 5: TICK [1]
+FUN 5: TICK [2]
+50 MS has passed
+RR Scheduler Yeilding Thread To [5]
+FUN 6: TICK [4]
+FUN 6: TICK [5]
+FUN 6: TICK [6]
+FUN 6: TICK [7]
+FUN 6: TICK [8]
+FUN 6: TICK [9]
+FUN 6 IN SLOW BURST[4]
+FUN 6: TICK [0]
+FUN 6: TICK [1]
+FUN 6: TICK [2]
+50 MS has passed
+RR Scheduler Yeilding Thread To [4]
+FUN 5: TICK [3]
+FUN 5: TICK [4]
+FUN 5: TICK [5]
+FUN 5: TICK [6]
+FUN 5: TICK [7]
+FUN 5: TICK [8]
+FUN 5: TICK [9]
+FUN 5 IN SLOW BURST[5]
+FUN 5: TICK [0]
+FUN 5: TICK [1]
+50 MS has passed
+RR Scheduler Yeilding Thread To [5]
+FUN 6: TICK [3]
+FUN 6: TICK [4]
+FUN 6: TICK [5]
+FUN 6: TICK [6]
+FUN 6: TICK [7]
+FUN 6: TICK [8]
+FUN 6: TICK [9]
+FUN 6 IN SLOW BURST[5]
+FUN 6: TICK [0]
+FUN 6: TICK [1]
+50 MS has passed
+RR Scheduler Yeilding Thread To [4]
+FUN 5: TICK [2]
+FUN 5: TICK [3]
+FUN 5: TICK [4]
+FUN 5: TICK [5]
+FUN 5: TICK [6]
+FUN 5: TICK [7]
+FUN 5: TICK [8]
+FUN 5: TICK [9]
+FUN 5 IN SLOW BURST[6]
+50 MS has passed
+RR Scheduler Yeilding Thread To [5]
+FUN 6: TICK [2]
+FUN 6: TICK [3]
+FUN 6: TICK [4]
+FUN 6: TICK [5]
+FUN 6: TICK [6]
+FUN 6: TICK [7]
+FUN 6: TICK [8]
+FUN 6: TICK [9]
+FUN 6 IN SLOW BURST[6]
+FUN 6: TICK [0]
+50 MS has passed
+RR Scheduler Yeilding Thread To [4]
+FUN 5: TICK [0]
+FUN 5: TICK [1]
+FUN 5: TICK [2]
+FUN 5: TICK [3]
+FUN 5: TICK [4]
+FUN 5: TICK [5]
+FUN 5: TICK [6]
+FUN 5: TICK [7]
+FUN 5: TICK [8]
+50 MS has passed
+RR Scheduler Yeilding Thread To [5]
+FUN 6: TICK [1]
+FUN 6: TICK [2]
+FUN 6: TICK [3]
+FUN 6: TICK [4]
+FUN 6: TICK [5]
+FUN 6: TICK [6]
+FUN 6: TICK [7]
+FUN 6: TICK [8]
+50 MS has passed
+RR Scheduler Yeilding Thread To [4]
+FUN 5: TICK [9]
+FUN 5 IN SLOW BURST[7]
+FUN 5: TICK [0]
+FUN 5: TICK [1]
+FUN 5: TICK [2]
+FUN 5: TICK [3]
+FUN 5: TICK [4]
+FUN 5: TICK [5]
+FUN 5: TICK [6]
+FUN 5: TICK [7]
+50 MS has passed
+RR Scheduler Yeilding Thread To [5]
+FUN 6: TICK [9]
+FUN 6 IN SLOW BURST[7]
+FUN 6: TICK [0]
+FUN 6: TICK [1]
+FUN 6: TICK [2]
+FUN 6: TICK [3]
+FUN 6: TICK [4]
+FUN 6: TICK [5]
+FUN 6: TICK [6]
+FUN 6: TICK [7]
+50 MS has passed
+RR Scheduler Yeilding Thread To [4]
+FUN 5: TICK [8]
+FUN 5: TICK [9]
+FUN 5 IN SLOW BURST[8]
+FUN 5: TICK [0]
+FUN 5: TICK [1]
+FUN 5: TICK [2]
+FUN 5: TICK [3]
+FUN 5: TICK [4]
+FUN 5: TICK [5]
+50 MS has passed
+RR Scheduler Yeilding Thread To [5]
+FUN 6: TICK [8]
+FUN 6: TICK [9]
+FUN 6 IN SLOW BURST[8]
+FUN 6: TICK [0]
+FUN 6: TICK [1]
+FUN 6: TICK [2]
+FUN 6: TICK [3]
+FUN 6: TICK [4]
+FUN 6: TICK [5]
+FUN 6: TICK [6]
+50 MS has passed
+RR Scheduler Yeilding Thread To [4]
+FUN 5: TICK [6]
+FUN 5: TICK [7]
+FUN 5: TICK [8]
+FUN 5: TICK [9]
+FUN 5 IN SLOW BURST[9]
+FUN 5: TICK [0]
+FUN 5: TICK [1]
+FUN 5: TICK [2]
+FUN 5: TICK [3]
+FUN 5: TICK [4]
+50 MS has passed
+RR Scheduler Yeilding Thread To [5]
+FUN 6: TICK [7]
+FUN 6: TICK [8]
+FUN 6: TICK [9]
+FUN 6 IN SLOW BURST[9]
+FUN 6: TICK [0]
+FUN 6: TICK [1]
+FUN 6: TICK [2]
+FUN 6: TICK [3]
+FUN 6: TICK [4]
+50 MS has passed
+RR Scheduler Yeilding Thread To [4]
+FUN 5: TICK [5]
+FUN 5: TICK [6]
+FUN 5: TICK [7]
+FUN 5: TICK [8]
+FUN 5: TICK [9]
+Shutting Down [4]
+RR Scheduler Yeilding Thread To [5]
+FUN 6: TICK [5]
+FUN 6: TICK [6]
+FUN 6: TICK [7]
+FUN 6: TICK [8]
+FUN 6: TICK [9]
+Shutting Down [5]
+esp = <2104600>
+done
+Yeilding thread to ideal thread
+Ideal Thread Starting
+Shutting Down [6]
+esp = <2105648>
+done
+Yeilding thread to ideal thread
+Ideal Thread Starting
+Shutting Down [7]
+esp = <2106696>
+done
+Yeilding thread to ideal thread
+Ideal Thread Starting
+Shutting Down [8]
+esp = <2107744>
+done
+Yeilding thread to ideal thread
+Ideal Thread Starting
+Shutting Down [9]
+esp = <2108792>
+done
+Yeilding thread to ideal thread
+Ideal Thread Starting
+Shutting Down [10]
+esp = <2109840>
+done
+Yeilding thread to ideal thread
+Ideal Thread Starting
+Shutting Down [11]
+esp = <2110888>
+done
+Yeilding thread to ideal thread
+Ideal Thread Starting
+Shutting Down [12]
+esp = <2111936>
+done
+Yeilding thread to ideal thread
+Ideal Thread Starting
+Shutting Down [13]
+esp = <2112984>
+done
+Yeilding thread to ideal thread
+Ideal Thread Starting
+Shutting Down [14]
+esp = <2114032>
+done
+Yeilding thread to ideal thread
+Ideal Thread Starting
+Shutting Down [15]
+esp = <2115080>
+done
+Yeilding thread to ideal thread
+Ideal Thread Starting
+Shutting Down [16]
+esp = <2116128>
+done
+Yeilding thread to ideal thread
+Ideal Thread Starting
+Shutting Down [17]
+esp = <2117176>
+done
+Yeilding thread to ideal thread
+Ideal Thread Starting
+Shutting Down [18]
+esp = <2118224>
+done
+Yeilding thread to ideal thread
+Ideal Thread Starting
+Shutting Down [19]
+esp = <2119272>
+done
+Yeilding thread to ideal thread
+Ideal Thread Starting
+(0).[4284428000] [0x0000001024c8] 0008:00000000001024c8 (unk. ctxt): inc dword ptr ss:[ebp-16] ; ff45f0

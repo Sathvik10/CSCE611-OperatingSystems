@@ -1,0 +1,14 @@
+{
+  "files.associations": {
+    "kernel.C": "cpp",
+    "thread.C": "cpp",
+    "scheduler.C": "cpp",
+    "simple_keyboard.C": "cpp",
+    "machine.C": "cpp",
+    "simple_timer.C": "cpp",
+    "RRschedular.C": "cpp",
+    "interrupts.C": "cpp",
+    "console.C": "cpp",
+    "exception": "cpp"
+  }
+}
